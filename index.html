@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>马卡龙很想你</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://cdn.pixabay.com/photo/2016/11/29/03/53/macaron-1869111_1280.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: "Arial", sans-serif;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      margin: 15% auto;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      margin-top: 10px;
+      width: 80%;
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+    }
+    #secondImage {
+      display: none;
+      margin-top: 30px;
+    }
+    img {
+      max-width: 90%;
+      border-radius: 10px;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>马卡龙有个问题想问你</h2>
+    <label for="answer">小敏最喜欢：</label><br>
+    <input type="text" id="answer" placeholder="请输入答案"><br>
+    <button onclick="checkAnswer()">提交</button>
+  </div>
+
+  <div id="secondImage">
+    <img src="https://cdn.pixabay.com/photo/2017/03/27/13/56/macaroons-2178566_1280.jpg" alt="马卡龙的回应">
+    <h3>马卡龙说：你答对啦！</h3>
+  </div>
+
+  <footer>
+    版权所有 © 2025 马卡龙与楷博
+  </footer>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim();
+      const validAnswers = ["mkb", "马楷博", "马卡龙"];
+      if (validAnswers.includes(input)) {
+        document.querySelector(".container").style.display = "none";
+        document.getElementById("secondImage").style.display = "block";
+      } else {
+        alert("马卡龙说：不是这个哦，再想想！");
+      }
+    }
+  </script>
+</body>
+</html>
